@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider Mini Project</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .slider-container {
+        position: relative;
+        width: 80%;
+        margin: 50px auto;
+        overflow: hidden; 
+    }
+    .slider-images {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+    .slide {
+        width: 100%;
+        height: 700px;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+    button {
+        position: absolute;
+        top: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        transform: translateY(-50%);
+    }
+    .prev {
+        left: 15px;
+    }
+    .next {
+        right: 15px;
+    }
+    button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }</style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider-images">
+            <img src="https://images.pexels.com/photos/29548508/pexels-photo-29548508/free-photo-of-cozy-window-nook-with-city-view-and-greenery.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Image 1" class="slide">
+            <img src="https://images.pexels.com/photos/29643350/pexels-photo-29643350/free-photo-of-elegant-christmas-decor-on-grand-piano.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Image 2" class="slide">
+            <img src="https://images.pexels.com/photos/29902918/pexels-photo-29902918/free-photo-of-scenic-mountain-landscape-in-talgar-kazakhstan.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Image 3" class="slide">
+            <img src="https://images.pexels.com/photos/28308473/pexels-photo-28308473/free-photo-of-a-black-and-white-photo-of-two-people-sitting-on-a-bench-in-the-snow.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Image 4"class="slide"/>
+            <img src="https://images.pexels.com/photos/29617303/pexels-photo-29617303/free-photo-of-urban-cityscape-with-ferris-wheel-and-traffic.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Image 5"class="slide"/>
+            <img src="https://images.pexels.com/photos/10727324/pexels-photo-10727324.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Image 6"class="slide"/>
+            <img src="https://images.pexels.com/photos/14797234/pexels-photo-14797234.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Image 7"class="slide"/>
+            <img src="https://images.pexels.com/photos/29822931/pexels-photo-29822931/free-photo-of-seagulls-soar-in-dramatic-black-and-white-sky.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Image 8"class="slide"/>
+            <img src="https://images.pexels.com/photos/29114782/pexels-photo-29114782/free-photo-of-snow-covered-forest-path-in-zakopane-poland.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Image 9"class="slide"/>
+            <img src="https://images.pexels.com/photos/28292874/pexels-photo-28292874/free-photo-of-cozy-bedroom-scene-with-book-and-tea.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Image 10"class="slide"/>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+    <script >
+        let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length; 
+function moveSlide(direction) {
+    currentIndex += direction;
+    if (currentIndex >= totalSlides) {
+        currentIndex = 0;
+    }
+    if (currentIndex < 0) {
+        currentIndex = totalSlides - 1;
+    }
+    document.querySelector('.slider-images').style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+setInterval(() => {
+    moveSlide(1); 
+}, 3000); 
+    </script>
+</body>
+</html>
+
