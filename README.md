@@ -25,6 +25,7 @@ It enhances the user experience by offering dynamic content presentation, making
 4. Responsive Design: Adapts to different screen sizes, maintaining functionality and aesthetics.
    
 **Conclusion**
+
 The Image Slider project is an excellent tool for enhancing the visual experience of any website. By providing a simple yet effective way to display images, it improves user engagement, optimizes space, and allows for seamless navigation.
 With its smooth transitions, responsiveness, and customizable features, this image slider offers both functionality and flexibility for developers.
 Whether you're creating a portfolio, a product gallery, or simply want to display multiple images in an attractive manner, this project serves as a valuable, lightweight solution.
